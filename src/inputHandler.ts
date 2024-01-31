@@ -11,6 +11,13 @@
  * 輸出: 'Input is a number: 123'
  */
 
-export function handleInput(input) {
+export function handleInput<T>(input:T):string {
     // 在此實現函式
+    let str = ''
+    if(typeof input === 'string'){
+        str = `string: ${input}`
+    }else{
+        str = `number: ${input}`
+    }
+    return `Input is a ${str}`;
 }

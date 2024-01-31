@@ -14,4 +14,7 @@
  */
 export function createObjectAccessor<T>(obj: T) {
     // 請在此處寫下你的程式碼
+    const get =(item:keyof T):T[keyof T] => obj[item];
+    const set = (item: keyof T, val:T[keyof T]):void =>{ obj[item] = val};
+    return {get,set}
 }
